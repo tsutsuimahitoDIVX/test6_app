@@ -4,8 +4,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    working_dir: /sample-app
     volumes:
       - ./:/usr/src/app
-    command: sh -c "cd sample-app && npm run dev"
+    command: npm run dev
     ports:
       - "3000:3000"
