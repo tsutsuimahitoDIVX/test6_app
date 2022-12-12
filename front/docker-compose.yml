@@ -1,0 +1,12 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /sample-app
+    volumes:
+      - ./:/usr/src/app
+    command: npm run dev
+    ports:
+      - "3000:3000"
