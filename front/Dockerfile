@@ -1,4 +1,7 @@
 FROM node:16.13.2
-WORKDIR /usr/src/app
+WORKDIR /sample-app
+COPY ./sample-app /sample-app
 
-USER node
+RUN npm install
+
+CMD ["npm", "run", "dev"]
