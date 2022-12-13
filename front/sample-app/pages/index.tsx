@@ -1,12 +1,17 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import axios from 'axios'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
 
-   function handleClick(){
-    console.log('clickを確認しました')
-   }
+   function connection3001(){
+    axios.get('http://localhost:3001')
+
+    .then(response => console.log(response))
+    .catch(error => console.log(error))
+  }
+   
 
   return (
     <div className={styles.container}>
@@ -19,7 +24,7 @@ export default function Home() {
       <main>
 
        <div className={styles.button}>
-        <button onClick={handleClick}>ボタンを押す</button>
+        <button onClick={connection3001}>ボタンを押す</button>
        </div>
 
       </main>
